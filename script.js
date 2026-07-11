@@ -54,6 +54,11 @@
     searchTerm: ''
   };
 
+  /* Declared here (before first use) to avoid a temporal-dead-zone
+     ReferenceError: observeReveal() is called during initial render,
+     long before this line used to appear further down the file. */
+  let revealObserver;
+
   /* ---------- UTIL ---------- */
   const $ = (sel, ctx=document) => ctx.querySelector(sel);
   const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
@@ -603,15 +608,25 @@
   $$('.stat-number').forEach(el => statObserver.observe(el));
 
   /* ---------- SCROLL REVEAL ---------- */
-  let revealObserver;
   function observeReveal(){
     if (revealObserver) revealObserver.disconnect();
     revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('in-view');
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
     $$('.reveal:not(.in-view)').forEach(el => revealObserver.observe(el));
   }
+
+  /* Fail-safe: some tools render the whole page in one shot without ever
+     dispatching real scroll/resize events (e.g. full-page screenshot or
+     link-preview capture). If that happens the IntersectionObserver above
+     never fires and content stays permanently invisible. As a guarantee,
+     force every remaining .reveal element visible shortly after load. */
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      $$('.reveal:not(.in-view)').forEach(el => el.classList.add('in-view'));
+    }, 1200);
+  });
 
 })();
