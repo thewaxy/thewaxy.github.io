@@ -1,1 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova Store — Everything you need. Beautifully designed.</title>
+<meta name="description" content="Nova Store is a curated destination for electronics, gaming, fashion, home and lifestyle products — thoughtfully designed, honestly priced, delivered fast.">
+<meta name="keywords" content="nova store, ecommerce, electronics, gaming, fashion, home, lifestyle, deals">
+<meta name="author" content="Nova Store">
+<link rel="canonical" href="https://novastore.example.com/">
 
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nova Store — Everything you need. Beautifully designed.">
+<meta property="og:description" content="Discover products you'll actually love. Curated electronics, gaming, fashion, home and lifestyle essentials with fast delivery and secure payment.">
+<meta property="og:image" content="https://picsum.photos/id/26/1200/630">
+<meta property="og:url" content="https://novastore.example.com/">
+<meta property="og:site_name" content="Nova Store">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nova Store — Everything you need. Beautifully designed.">
+<meta name="twitter:description" content="Discover products you'll actually love. Curated electronics, gaming, fashion, home and lifestyle essentials.">
+<meta name="twitter:image" content="https://picsum.photos/id/26/1200/630">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23673F7D%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 fill=%22%23E4A951%22 text-anchor=%22middle%22 font-family=%22sans-serif%22>N</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Nova Store",
+  "description": "Everything you need. Beautifully designed.",
+  "url": "https://novastore.example.com"
+}
+</script>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-mark">
+    <span class="loader-ring"></span>
+    <span class="loader-letter">N</span>
+  </div>
+</div>
+
+<!-- Cookie Consent -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies to make Nova Store work better for you. <a href="#" onclick="return false;">Learn more</a></p>
+  <div class="cookie-actions">
+    <button class="btn btn-ghost btn-sm" id="cookieDecline">Decline</button>
+    <button class="btn btn-primary btn-sm" id="cookieAccept">Accept</button>
+  </div>
+</div>
+
+<!-- Toast container -->
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+<!-- Header -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#home" class="logo" aria-label="Nova Store home">
+      <span class="logo-mark">N</span><span class="logo-word">ova<span class="logo-dot">.</span></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <ul>
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#shop" class="nav-link">Shop</a></li>
+        <li><a href="#categories" class="nav-link">Categories</a></li>
+        <li><a href="#new-arrivals" class="nav-link">New Arrivals</a></li>
+        <li><a href="#deals" class="nav-link">Deals</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <button class="icon-btn" id="darkModeToggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+      <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
+        <i class="fa-regular fa-heart"></i>
+        <span class="badge" id="wishlistCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" aria-label="Shopping cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+      <button class="icon-btn" id="profileBtn" aria-label="Account"><i class="fa-regular fa-user"></i></button>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-blobs" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Spring / Summer Edit</p>
+        <h1>Discover Products<br>You'll <span class="text-accent">Actually</span> Love</h1>
+        <p class="hero-sub">Nova curates the pieces worth keeping — considered design, honest pricing, and a returns policy that trusts you. No clutter, no filler, just things that earn a place in your life.</p>
+        <div class="hero-cta">
+          <a href="#shop" class="btn btn-primary btn-lg">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#categories" class="btn btn-outline btn-lg">Explore Collection</a>
+        </div>
+        <div class="hero-trust">
+          <div><strong>50k+</strong><span>Happy customers</span></div>
+          <div><strong>4.9</strong><span>Average rating</span></div>
+          <div><strong>24/7</strong><span>Support</span></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-shape shape-a" aria-hidden="true"></div>
+        <div class="hero-shape shape-b" aria-hidden="true"></div>
+        <img src="https://picsum.photos/id/26/720/860" alt="Nova Store featured lifestyle product arrangement" class="hero-img" width="720" height="860">
+        <div class="hero-floating-card">
+          <img src="https://picsum.photos/id/96/80/80" alt="" width="48" height="48">
+          <div>
+            <strong>Aria Wireless Headset</strong>
+            <span>$189.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#features" class="scroll-cue" aria-label="Scroll down"><i class="fa-solid fa-chevron-down"></i></a>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features" aria-label="Why shop with us">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3>Fast Delivery</h3>
+          <p>Most orders ship within 24 hours and arrive in 2–4 business days.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+          <h3>Secure Payment</h3>
+          <p>Every transaction is encrypted end-to-end, so your data stays yours.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+          <h3>30-Day Returns</h3>
+          <p>Not the right fit? Send it back within 30 days, no questions asked.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+          <h3>24/7 Customer Support</h3>
+          <p>Real humans, day or night, ready to help you sort things out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories section" id="categories" aria-label="Shop by category">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Browse</p>
+        <h2>Shop by Category</h2>
+      </div>
+      <div class="category-grid">
+        <a href="#shop" class="category-card reveal" data-filter="Electronics">
+          <img src="https://picsum.photos/id/60/600/700" alt="Electronics category" loading="lazy" width="600" height="700">
+          <div class="category-overlay"><span>Electronics</span></div>
+        </a>
+        <a href="#shop" class="category-card reveal" data-filter="Gaming">
+          <img src="https://picsum.photos/id/96/600/700" alt="Gaming category" loading="lazy" width="600" height="700">
+          <div class="category-overlay"><span>Gaming</span></div>
+        </a>
+        <a href="#shop" class="category-card reveal" data-filter="Fashion">
+          <img src="https://picsum.photos/id/64/600/700" alt="Fashion category" loading="lazy" width="600" height="700">
+          <div class="category-overlay"><span>Fashion</span></div>
+        </a>
+        <a href="#shop" class="category-card reveal" data-filter="Home">
+          <img src="https://picsum.photos/id/106/600/700" alt="Home category" loading="lazy" width="600" height="700">
+          <div class="category-overlay"><span>Home</span></div>
+        </a>
+        <a href="#shop" class="category-card reveal" data-filter="Accessories">
+          <img src="https://picsum.photos/id/21/600/700" alt="Accessories category" loading="lazy" width="600" height="700">
+          <div class="category-overlay"><span>Accessories</span></div>
+        </a>
+        <a href="#shop" class="category-card reveal" data-filter="Lifestyle">
+          <img src="https://picsum.photos/id/117/600/700" alt="Lifestyle category" loading="lazy" width="600" height="700">
+          <div class="category-overlay"><span>Lifestyle</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Sellers / Shop -->
+  <section class="shop section" id="shop" aria-label="Best sellers">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Best Sellers</p>
+        <h2>Loved By Our Customers</h2>
+      </div>
+
+      <div class="shop-toolbar reveal">
+        <div class="filter-pills" id="filterPills">
+          <button class="pill active" data-filter="All">All</button>
+          <button class="pill" data-filter="Electronics">Electronics</button>
+          <button class="pill" data-filter="Gaming">Gaming</button>
+          <button class="pill" data-filter="Fashion">Fashion</button>
+          <button class="pill" data-filter="Home">Home</button>
+          <button class="pill" data-filter="Accessories">Accessories</button>
+          <button class="pill" data-filter="Lifestyle">Lifestyle</button>
+        </div>
+        <div class="shop-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" id="shopSearch" placeholder="Search products…" aria-label="Search products">
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid"><!-- injected by script.js --></div>
+    </div>
+  </section>
+
+  <!-- Limited Time Offer -->
+  <section class="offer" id="deals" aria-label="Limited time offer">
+    <img src="https://picsum.photos/id/180/1600/700" alt="" class="offer-bg" loading="lazy">
+    <div class="offer-overlay"></div>
+    <div class="container offer-inner reveal">
+      <span class="offer-badge">-40% Today Only</span>
+      <h2>The Midseason Sale Ends Soon</h2>
+      <p>Everything in the Aria &amp; Home Studio lines, discounted while the clock runs.</p>
+      <div class="countdown" id="countdown" aria-label="Countdown timer">
+        <div><span id="cd-days">00</span><small>Days</small></div>
+        <div><span id="cd-hours">00</span><small>Hours</small></div>
+        <div><span id="cd-mins">00</span><small>Mins</small></div>
+        <div><span id="cd-secs">00</span><small>Secs</small></div>
+      </div>
+      <a href="#shop" class="btn btn-secondary btn-lg">Grab the Deal</a>
+    </div>
+  </section>
+
+  <!-- Trending Carousel -->
+  <section class="trending section" id="new-arrivals" aria-label="Trending products">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">New Arrivals</p>
+        <h2>Trending Right Now</h2>
+      </div>
+    </div>
+    <div class="carousel-wrap reveal">
+      <button class="carousel-btn prev" id="carouselPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="carousel-track" id="carouselTrack"><!-- injected by script.js --></div>
+      <button class="carousel-btn next" id="carouselNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section class="stats" aria-label="Store statistics">
+    <div class="container stats-grid">
+      <div class="stat-card reveal">
+        <span class="stat-number" data-target="50000" data-suffix="+">0</span>
+        <p>Customers</p>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-number" data-target="120000" data-suffix="">0</span>
+        <p>Orders Delivered</p>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-number" data-target="4.9" data-decimal="1" data-suffix="">0</span>
+        <p>Average Rating</p>
+      </div>
+      <div class="stat-card reveal">
+        <span class="stat-number" data-target="98" data-suffix="%">0</span>
+        <p>Satisfaction</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials section" id="about" aria-label="Customer testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Testimonials</p>
+        <h2>What Customers Are Saying</h2>
+      </div>
+      <div class="testimonial-grid" id="testimonialGrid"><!-- injected by script.js --></div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter" aria-label="Newsletter signup">
+    <div class="container newsletter-inner reveal">
+      <div>
+        <h2>Join the Nova Circle</h2>
+        <p>Early access to drops, quiet-hour sales, and the occasional good story. One email a week, max.</p>
+      </div>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" required placeholder="you@email.com" aria-label="Email address" id="newsletterEmail">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq section" aria-label="Frequently asked questions">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Support</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="accordion" id="faqAccordion"><!-- injected by script.js --></div>
+    </div>
+  </section>
+
+  <!-- Blog Preview -->
+  <section class="blog section" aria-label="Journal">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Journal</p>
+        <h2>From the Nova Blog</h2>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card reveal">
+          <img src="https://picsum.photos/id/48/700/460" alt="Desk setup with Nova electronics" loading="lazy" width="700" height="460">
+          <div class="blog-card-body">
+            <span class="blog-tag">Guides</span>
+            <h3>Five Desk Upgrades That Actually Matter</h3>
+            <p>We tested a dozen "productivity" gadgets. Here's what earned a permanent spot on the desk.</p>
+            <a href="#" class="link-arrow" onclick="return false;">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <img src="https://picsum.photos/id/119/700/460" alt="Sustainable packaging materials" loading="lazy" width="700" height="460">
+          <div class="blog-card-body">
+            <span class="blog-tag">Sustainability</span>
+            <h3>Inside Our Shift to Plastic-Free Packaging</h3>
+            <p>Why every Nova order now arrives in compostable mailers — and what it cost us to switch.</p>
+            <a href="#" class="link-arrow" onclick="return false;">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <img src="https://picsum.photos/id/1080/700/460" alt="Minimalist living room styling" loading="lazy" width="700" height="460">
+          <div class="blog-card-body">
+            <span class="blog-tag">Style</span>
+            <h3>A Small Apartment, Styled Without Clutter</h3>
+            <p>One reader's 480 sq ft renovation, and the six pieces that made it feel twice the size.</p>
+            <a href="#" class="link-arrow" onclick="return false;">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram Gallery -->
+  <section class="insta section" aria-label="Instagram gallery">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">@novastore</p>
+        <h2>Tag Us In Your World</h2>
+      </div>
+    </div>
+    <div class="insta-grid">
+      <a href="#" class="insta-item reveal" onclick="return false;"><img src="https://picsum.photos/id/1015/400/400" alt="Instagram post" loading="lazy" width="400" height="400"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="insta-item reveal" onclick="return false;"><img src="https://picsum.photos/id/1025/400/400" alt="Instagram post" loading="lazy" width="400" height="400"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="insta-item reveal" onclick="return false;"><img src="https://picsum.photos/id/1035/400/400" alt="Instagram post" loading="lazy" width="400" height="400"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="insta-item reveal" onclick="return false;"><img src="https://picsum.photos/id/1045/400/400" alt="Instagram post" loading="lazy" width="400" height="400"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="insta-item reveal" onclick="return false;"><img src="https://picsum.photos/id/1055/400/400" alt="Instagram post" loading="lazy" width="400" height="400"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="insta-item reveal" onclick="return false;"><img src="https://picsum.photos/id/1062/400/400" alt="Instagram post" loading="lazy" width="400" height="400"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="insta-item reveal" onclick="return false;"><img src="https://picsum.photos/id/1074/400/400" alt="Instagram post" loading="lazy" width="400" height="400"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="insta-item reveal" onclick="return false;"><img src="https://picsum.photos/id/1084/400/400" alt="Instagram post" loading="lazy" width="400" height="400"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer" id="contact">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="logo"><span class="logo-mark">N</span><span class="logo-word">ova<span class="logo-dot">.</span></span></a>
+      <p>Everything you need. Beautifully designed. Curated goods for people who'd rather buy one good thing than three mediocre ones.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram" onclick="return false;"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="X (Twitter)" onclick="return false;"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="Facebook" onclick="return false;"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" aria-label="TikTok" onclick="return false;"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" aria-label="Pinterest" onclick="return false;"><i class="fa-brands fa-pinterest"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about" onclick="return false;">About Nova</a></li>
+        <li><a href="#" onclick="return false;">Careers</a></li>
+        <li><a href="#" onclick="return false;">Press</a></li>
+        <li><a href="#" onclick="return false;">Sustainability</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#" onclick="return false;">Help Center</a></li>
+        <li><a href="#" onclick="return false;">Shipping Info</a></li>
+        <li><a href="#" onclick="return false;">Returns</a></li>
+        <li><a href="#" onclick="return false;">Track Order</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#" onclick="return false;">Privacy Policy</a></li>
+        <li><a href="#" onclick="return false;">Terms of Service</a></li>
+        <li><a href="#" onclick="return false;">Cookie Policy</a></li>
+        <li><a href="#" onclick="return false;">Accessibility</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Contact</h4>
+      <ul>
+        <li><i class="fa-solid fa-location-dot"></i> 14 Harbor Lane, Portland, OR</li>
+        <li><i class="fa-solid fa-phone"></i> +1 (555) 019‑2044</li>
+        <li><i class="fa-solid fa-envelope"></i> hello@novastore.example</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year"></span> Nova Store. All rights reserved.</p>
+    <p>Designed for a beautifully unnecessary Tuesday.</p>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Floating chat -->
+<button class="chat-fab" id="chatFab" aria-label="Open chat"><i class="fa-solid fa-comment-dots"></i></button>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#shop" class="btn btn-primary btn-block">Shop Now</a>
+</div>
+
+<!-- Search Modal -->
+<div class="modal-overlay" id="searchModal">
+  <div class="modal search-modal">
+    <button class="modal-close" data-close="searchModal" aria-label="Close search"><i class="fa-solid fa-xmark"></i></button>
+    <div class="search-input-wrap">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="search" id="modalSearchInput" placeholder="Search for products, categories…" autofocus>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- Quick View Modal -->
+<div class="modal-overlay" id="quickViewModal">
+  <div class="modal quickview-modal">
+    <button class="modal-close" data-close="quickViewModal" aria-label="Close quick view"><i class="fa-solid fa-xmark"></i></button>
+    <div class="quickview-body" id="quickViewBody"><!-- injected --></div>
+  </div>
+</div>
+
+<!-- Checkout Modal -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal checkout-modal">
+    <button class="modal-close" data-close="checkoutModal" aria-label="Close checkout"><i class="fa-solid fa-xmark"></i></button>
+    <h3>Checkout</h3>
+    <form id="checkoutForm" class="checkout-form">
+      <div class="form-row">
+        <label>Full name<input type="text" required placeholder="Jordan Blake"></label>
+        <label>Email<input type="email" required placeholder="jordan@email.com"></label>
+      </div>
+      <label>Shipping address<input type="text" required placeholder="14 Harbor Lane, Portland, OR"></label>
+      <div class="form-row">
+        <label>Card number<input type="text" required placeholder="4242 4242 4242 4242" maxlength="19"></label>
+        <label>Expiry<input type="text" required placeholder="MM/YY" maxlength="5"></label>
+      </div>
+      <div class="checkout-summary" id="checkoutSummary"></div>
+      <button type="submit" class="btn btn-primary btn-block btn-lg">Place Order</button>
+    </form>
+  </div>
+</div>
+
+<!-- Order Confirmation Modal -->
+<div class="modal-overlay" id="confirmModal">
+  <div class="modal confirm-modal">
+    <button class="modal-close" data-close="confirmModal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="confirm-check"><i class="fa-solid fa-check"></i></div>
+    <h3>Order Confirmed</h3>
+    <p>Thanks — your order <strong id="orderNumber">#NV-00000</strong> is being prepared. A confirmation has been sent to your email.</p>
+    <button class="btn btn-primary" data-close="confirmModal">Continue Shopping</button>
+  </div>
+</div>
+
+<!-- Cart Drawer -->
+<div class="drawer-overlay" id="cartOverlay"></div>
+<aside class="drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="drawer-head">
+    <h3>Your Cart</h3>
+    <button class="modal-close" id="closeCart" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="drawer-body" id="cartItems"><!-- injected --></div>
+  <div class="drawer-footer">
+    <div class="coupon-row">
+      <input type="text" id="couponInput" placeholder="Coupon code (try NOVA10)">
+      <button class="btn btn-outline btn-sm" id="applyCoupon">Apply</button>
+    </div>
+    <div class="shipping-row">
+      <select id="shippingSelect">
+        <option value="0">Estimate shipping…</option>
+        <option value="5.99">Standard — $5.99 (3-5 days)</option>
+        <option value="14.99">Express — $14.99 (1-2 days)</option>
+        <option value="0">Pickup — Free</option>
+      </select>
+    </div>
+    <div class="cart-line"><span>Subtotal</span><span id="cartSubtotal">$0.00</span></div>
+    <div class="cart-line discount-line" id="discountLine" hidden><span>Discount</span><span id="cartDiscount">-$0.00</span></div>
+    <div class="cart-line"><span>Shipping</span><span id="cartShipping">$0.00</span></div>
+    <div class="cart-line cart-total"><span>Total</span><span id="cartTotal">$0.00</span></div>
+    <button class="btn btn-primary btn-block btn-lg" id="checkoutBtn">Checkout</button>
+  </div>
+</aside>
+
+<!-- Wishlist Drawer -->
+<div class="drawer-overlay" id="wishlistOverlay"></div>
+<aside class="drawer" id="wishlistDrawer" aria-label="Wishlist">
+  <div class="drawer-head">
+    <h3>Your Wishlist</h3>
+    <button class="modal-close" id="closeWishlist" aria-label="Close wishlist"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="drawer-body" id="wishlistItems"><!-- injected --></div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
