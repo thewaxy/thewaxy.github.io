@@ -61,6 +61,14 @@
     var params = new URLSearchParams(location.search);
     var token = params.get("token") || "";
     if (token) localStorage.setItem(tokenKey, token);
+    if (token) return token;
+    var existingScript = qs('script[src*="/api/v1/wz.js"][src*="token="], script[src*="../api/v1/wz.js"][src*="token="]');
+    if (existingScript) {
+      try {
+        token = new URL(existingScript.src, location.href).searchParams.get("token") || "";
+        if (token) localStorage.setItem(tokenKey, token);
+      } catch (e) {}
+    }
     return token || localStorage.getItem(tokenKey) || "";
   }
   function preserveTokenLinks(token) {
@@ -79,6 +87,9 @@
     if (!token) return;
     window.Workzy = window.Workzy || {};
     window.Workzy.siteToken = token;
+    if (qs('script[src*="/api/v1/wz.js"], script[src*="../api/v1/wz.js"]')) {
+      return;
+    }
     ["wz.js?v=test-site-1&token=", "widget-client.js?v=test-site-1&token="].forEach(function (src) {
       var s = document.createElement("script");
       s.src = "../api/v1/" + src + encodeURIComponent(token);
