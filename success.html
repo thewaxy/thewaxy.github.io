@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order Confirmed | Northstar Test Shop</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="token-banner" data-token-banner>Workzy token yok. <form data-token-form style="display:inline"><input data-token-input placeholder="Public token yapistir"><button class="btn primary" type="submit">Bagla</button></form></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">N</span><span>Northstar</span></a>
+    <nav class="nav"><a href="index.html">Vitrin</a><a href="catalog.html">Katalog</a><a href="support.html">Destek</a><a href="stress.html">Stress Lab</a></nav>
+    <div class="actions"><a class="icon-btn" href="account.html" aria-label="Hesap">U</a><a class="btn" href="cart.html">Sepet <span class="cart-count" data-cart-count>0</span></a></div>
+  </header>
+  <main class="container hero">
+    <div>
+      <p class="eyebrow">Payment successful</p>
+      <h1>Order confirmed</h1>
+      <p class="lead">Thank you for your order. Siparis onaylandi ve confirmation has been sent. Order ID: <strong id="orderId">NS-TEST-2026</strong></p>
+      <div class="notice order-success checkout-success">Siparisiniz alindi. Odenen toplam: <strong data-order-total>0 TL</strong></div>
+      <p style="margin-top:20px"><a class="btn primary" href="catalog.html">Yeni test turu baslat</a></p>
+    </div>
+    <div class="hero-media"><img src="https://images.unsplash.com/photo-1512909006721-3d6018887383?auto=format&fit=crop&w=1200&q=80" alt="Paketlenen siparis kutulari"><div class="floating-receipt"><strong>Success signal</strong><span>Bu sayfa purchase/page_candidate testi icindir.</span></div></div>
+  </main>
+  <footer class="footer"><div class="container">Basari sayfasi, test sitesi.</div></footer>
+  <div class="toast" data-toast></div>
+  <script>document.addEventListener("DOMContentLoaded",function(){var p=new URLSearchParams(location.search);var o=document.getElementById("orderId");if(o&&p.get("order"))o.textContent=p.get("order");});</script>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

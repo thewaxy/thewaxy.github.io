@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Destek | Northstar Test Shop</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="token-banner" data-token-banner>Workzy token yok. <form data-token-form style="display:inline"><input data-token-input placeholder="Public token yapistir"><button class="btn primary" type="submit">Bagla</button></form></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">N</span><span>Northstar</span></a>
+    <nav class="nav"><a href="index.html">Vitrin</a><a href="catalog.html">Katalog</a><a href="support.html" aria-current="page">Destek</a><a href="stress.html">Stress Lab</a></nav>
+    <div class="actions"><a class="icon-btn" href="account.html" aria-label="Hesap">U</a><a class="btn" href="cart.html">Sepet <span class="cart-count" data-cart-count>0</span></a></div>
+  </header>
+  <main class="container section">
+    <p class="eyebrow">Destek</p>
+    <h1>Form ve widget testi</h1>
+    <div class="split">
+      <form>
+        <div class="field"><label>Konu</label><select name="topic"><option>Kargo gecikti</option><option>Urun onerisi</option><option>Iade talebi</option><option>Kurumsal teklif</option></select></div>
+        <div class="field"><label>Mesaj</label><textarea name="message" placeholder="Mesajinizi yazin"></textarea></div>
+        <button class="btn primary" type="submit">Destek talebi gonder</button>
+      </form>
+      <section class="grid two">
+        <article class="card"><div class="card-body"><h3>SSS</h3><p class="muted">Kargo, iade, fatura ve kampanya sorulari icin kart tiklama testi.</p><button class="btn ghost" data-open-modal="faqModal">SSS ac</button></div></article>
+        <article class="card"><div class="card-body"><h3>Newsletter</h3><form><div class="field"><label>E-posta</label><input class="input" type="email" placeholder="mail@example.com"></div><button class="btn coral" type="submit">Kaydol</button></form></div></article>
+      </section>
+    </div>
+  </main>
+  <div class="modal" id="faqModal"><div class="modal-panel"><div class="card-body"><h2>Sik sorulanlar</h2><p class="muted">Bu modal DOM mutation ve element view testlerine yardimci olur.</p><button class="btn primary" data-close-modal>Kapat</button></div></div></div>
+  <footer class="footer"><div class="container">Destek sayfasi, test sitesi.</div></footer>
+  <div class="toast" data-toast></div>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

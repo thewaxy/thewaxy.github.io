@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout | Northstar Test Shop</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="token-banner" data-token-banner>Workzy token yok. <form data-token-form style="display:inline"><input data-token-input placeholder="Public token yapistir"><button class="btn primary" type="submit">Bagla</button></form></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">N</span><span>Northstar</span></a>
+    <nav class="nav"><a href="index.html">Vitrin</a><a href="catalog.html">Katalog</a><a href="support.html">Destek</a><a href="stress.html">Stress Lab</a></nav>
+    <div class="actions"><a class="icon-btn" href="account.html" aria-label="Hesap">U</a><a class="btn" href="cart.html">Sepet <span class="cart-count" data-cart-count>0</span></a></div>
+  </header>
+  <main class="container section">
+    <p class="eyebrow">Checkout</p>
+    <h1>Odeme sayfasi ve siparis ozeti</h1>
+    <div class="steps"><div class="step active">1. Bilgiler</div><div class="step active">2. Teslimat</div><div class="step active">3. Odeme</div><div class="step">4. Onay</div></div>
+    <div class="split">
+      <form data-checkout-form>
+        <div class="grid two">
+          <div class="field"><label>Ad</label><input class="input" name="first_name" autocomplete="given-name" required></div>
+          <div class="field"><label>Soyad</label><input class="input" name="last_name" autocomplete="family-name" required></div>
+        </div>
+        <div class="field"><label>E-posta</label><input class="input" type="email" name="email" value="demo@northstar.test" required></div>
+        <div class="field"><label>Adres</label><textarea name="address" required>Test Mahallesi, Workzy Sokak No: 42</textarea></div>
+        <div class="grid two">
+          <div class="field"><label>Kart no</label><input class="input" inputmode="numeric" value="4242 4242 4242 4242" required></div>
+          <div class="field"><label>Kupon</label><input class="input" name="coupon" placeholder="WORKZY12"></div>
+        </div>
+        <button class="btn primary cta" type="submit">Siparisi tamamla</button>
+        <button class="btn ghost" type="button" data-rage>Alternatif odeme</button>
+      </form>
+      <aside class="summary"><h3>Order summary</h3><p class="muted">Checkout summary ve payment successful sinyallerini test etmek icin hazirlandi.</p><div data-summary></div></aside>
+    </div>
+  </main>
+  <footer class="footer"><div class="container">Checkout sayfasi, test sitesi.</div></footer>
+  <div class="toast" data-toast></div>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

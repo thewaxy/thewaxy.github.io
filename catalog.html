@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Katalog | Northstar Test Shop</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="token-banner" data-token-banner>Workzy token yok. <form data-token-form style="display:inline"><input data-token-input placeholder="Public token yapistir"><button class="btn primary" type="submit">Bagla</button></form></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">N</span><span>Northstar</span></a>
+    <nav class="nav"><a href="index.html">Vitrin</a><a href="catalog.html" aria-current="page">Katalog</a><a href="support.html">Destek</a><a href="stress.html">Stress Lab</a></nav>
+    <div class="actions"><a class="icon-btn" href="account.html" aria-label="Hesap">U</a><a class="btn" href="cart.html">Sepet <span class="cart-count" data-cart-count>0</span></a></div>
+  </header>
+  <main class="container section">
+    <p class="eyebrow">Katalog</p>
+    <h1>Arama, filtre ve urun tiklama testi</h1>
+    <p class="lead">Filtreleri degistir, urun kartlarini ac, sepete ekle. Workzy icin farkli event yogunluklari olusturur.</p>
+    <div class="toolbar">
+      <input class="input" data-search placeholder="Urun, etiket veya aciklama ara">
+      <select data-category><option value="all">Tum kategoriler</option><option value="home">Home</option><option value="office">Office</option><option value="kitchen">Kitchen</option><option value="travel">Travel</option></select>
+      <select data-sort><option value="popular">Populer</option><option value="price-asc">Fiyat artan</option><option value="price-desc">Fiyat azalan</option></select>
+    </div>
+    <div class="grid" data-products></div>
+  </main>
+  <footer class="footer"><div class="container">Katalog sayfasi, test sitesi.</div></footer>
+  <div class="toast" data-toast></div>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

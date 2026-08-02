@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Northstar Test Shop | Workzy Test Site</title>
+  <meta name="description" content="Workzy icin cok sayfali davranis test sitesi.">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="token-banner" data-token-banner>
+    Workzy token yok. <form data-token-form style="display:inline"><input data-token-input placeholder="Public token yapistir"><button class="btn primary" type="submit">Bagla</button></form>
+  </div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">N</span><span>Northstar</span></a>
+    <nav class="nav" aria-label="Ana navigasyon">
+      <a href="index.html" aria-current="page">Vitrin</a>
+      <a href="catalog.html">Katalog</a>
+      <a href="support.html">Destek</a>
+      <a href="stress.html">Stress Lab</a>
+    </nav>
+    <div class="actions">
+      <a class="icon-btn" href="account.html" aria-label="Hesap">U</a>
+      <a class="btn" href="cart.html">Sepet <span class="cart-count" data-cart-count>0</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div>
+        <p class="eyebrow">Workzy davranis testi</p>
+        <h1>Northstar Test Shop</h1>
+        <p class="lead">Cok sayfali gezinme, urun goruntuleme, sepet, checkout, form, modal, scroll ve satin alma sinyallerini tek yerde deneyen hafif bir test magazasi.</p>
+        <div class="actions">
+          <a class="btn primary cta" href="catalog.html" data-workzy-track>Katalogu gez</a>
+          <a class="btn ghost" href="#neden">Neyi test eder?</a>
+        </div>
+        <div class="metric-row">
+          <div class="metric"><strong>8</strong><span>sayfa akisi</span></div>
+          <div class="metric"><strong>30+</strong><span>tiklanabilir hedef</span></div>
+          <div class="metric"><strong>4</strong><span>form senaryosu</span></div>
+          <div class="metric"><strong>1</strong><span>purchase success</span></div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80" alt="Modern magazada paket hazirlayan ekip">
+        <div class="floating-receipt">
+          <div><strong>Canli test akisi</strong><br><span>Katalog -> Urun -> Sepet -> Checkout -> Basari</span></div>
+          <a class="btn coral" href="checkout.html">Checkout dene</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="neden">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Sinyal paketi</p>
+          <h2>Workzy icin bilerek hareketli.</h2>
+        </div>
+        <div class="grid two">
+          <article class="card"><div class="card-body"><h3>Davranis</h3><p class="muted">Sayfa gecisleri, link tiklari, scroll derinligi, element gorunurlugu ve hizli tiklamalar.</p></div></article>
+          <article class="card"><div class="card-body"><h3>Ticaret</h3><p class="muted">Urun detay, sepete ekleme, sepet duzenleme, checkout ve siparis onayi metinleri.</p></div></article>
+          <article class="card"><div class="card-body"><h3>Formlar</h3><p class="muted">Destek, stok bildirimi, newsletter ve odeme formlari ile form start/submit sinyalleri.</p></div></article>
+          <article class="card"><div class="card-body"><h3>Widget</h3><p class="muted">Public token baglandiginda Workzy satis widget'i her sayfada otomatik yuklenir.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section">
+      <p class="eyebrow">One cikanlar</p>
+      <h2>Test icin hazir urunler</h2>
+      <div class="grid" data-products></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container">Northstar Test Shop, Workzy yerel test sitesi. Gercek satis yapmaz.</div></footer>
+  <div class="toast" data-toast></div>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stress Lab | Northstar Test Shop</title>
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="token-banner" data-token-banner>Workzy token yok. <form data-token-form style="display:inline"><input data-token-input placeholder="Public token yapistir"><button class="btn primary" type="submit">Bagla</button></form></div>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">N</span><span>Northstar</span></a>
+    <nav class="nav"><a href="index.html">Vitrin</a><a href="catalog.html">Katalog</a><a href="support.html">Destek</a><a href="stress.html" aria-current="page">Stress Lab</a></nav>
+    <div class="actions"><a class="icon-btn" href="account.html" aria-label="Hesap">U</a><a class="btn" href="cart.html">Sepet <span class="cart-count" data-cart-count>0</span></a></div>
+  </header>
+  <main class="container section">
+    <p class="eyebrow">Stress Lab</p>
+    <h1>Workzy'i bir tik zorlayan oyun alani</h1>
+    <p class="lead">Bu sayfada cok sayida buton, form alani, anchor, modal ve uzun scroll var. Arka uc yok; sadece davranis sinyali uretilir.</p>
+    <div class="stress-board">
+      <div class="stress-tile"><button data-rage>Hizli tik 1</button></div>
+      <div class="stress-tile"><button data-rage>Hizli tik 2</button></div>
+      <div class="stress-tile"><button data-open-modal="labModal">Modal ac</button></div>
+      <div class="stress-tile"><button data-add="desk-kit">Sepete desk</button></div>
+      <div class="stress-tile"><a class="btn ghost" href="#deep-scroll">Derine in</a></div>
+      <div class="stress-tile"><a class="btn ghost" href="checkout.html">Checkout</a></div>
+    </div>
+    <section class="section grid">
+      <article class="card"><div class="card-body"><h3>A/B kart A</h3><p class="muted">Kisa metin ve CTA.</p><button class="btn primary">A sec</button></div></article>
+      <article class="card"><div class="card-body"><h3>A/B kart B</h3><p class="muted">Daha uzun metin ve farkli CTA ile element view testi.</p><button class="btn coral">B sec</button></div></article>
+      <article class="card"><div class="card-body"><h3>A/B kart C</h3><p class="muted">Kullanici kararsizligi icin ek hedef.</p><button class="btn ghost">C sec</button></div></article>
+    </section>
+    <section class="section" id="deep-scroll">
+      <p class="eyebrow">Deep scroll</p>
+      <h2>Uzun okuma ve kaydirma bolgesi</h2>
+      <div class="grid two">
+        <p class="lead">Scroll yuzdeleri ve sure metrikleri icin bu alan bilerek uzun tutuldu. Kullanici kartlara inerken gorunurluk ve zaman sinyali uretir.</p>
+        <form><div class="field"><label>Mini anket</label><select><option>Hizli</option><option>Normal</option><option>Yavas</option></select></div><div class="field"><label>Not</label><textarea></textarea></div><button class="btn primary" type="submit">Anketi gonder</button></form>
+      </div>
+    </section>
+  </main>
+  <div class="modal" id="labModal"><div class="modal-panel"><div class="card-body"><h2>Lab modal</h2><p class="muted">Bu pencere ayni sayfada DOM degisimi ve tiklama izleme testi yapar.</p><button class="btn primary" data-close-modal>Kapat</button></div></div></div>
+  <footer class="footer"><div class="container">Stress Lab sayfasi, test sitesi.</div></footer>
+  <div class="toast" data-toast></div>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
