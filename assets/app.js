@@ -87,15 +87,6 @@
     if (!token) return;
     window.Workzy = window.Workzy || {};
     window.Workzy.siteToken = token;
-    if (qs('script[src*="/api/v1/wz.js"], script[src*="../api/v1/wz.js"]')) {
-      return;
-    }
-    ["wz.js?v=test-site-1&token=", "widget-client.js?v=test-site-1&token="].forEach(function (src) {
-      var s = document.createElement("script");
-      s.src = "../api/v1/" + src + encodeURIComponent(token);
-      s.defer = true;
-      document.body.appendChild(s);
-    });
   }
 
   function productCard(p) {
