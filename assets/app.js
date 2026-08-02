@@ -12,6 +12,11 @@
 
   var cartKey = "workzy_test_cart_v1";
   var tokenKey = "workzy_test_token";
+  var workzyConfig = {
+    scriptBase: "https://workzy.tr/api/v1/",
+    scriptVersion: "20260729c",
+    defaultToken: "wz_pk_3394328ee0832ff611ad02f9c5f54c55"
+  };
 
   function money(value) { return new Intl.NumberFormat("tr-TR", { style: "currency", currency: "TRY", maximumFractionDigits: 0 }).format(value); }
   function qs(sel, root) { return (root || document).querySelector(sel); }
@@ -69,7 +74,7 @@
         if (token) localStorage.setItem(tokenKey, token);
       } catch (e) {}
     }
-    return token || localStorage.getItem(tokenKey) || "";
+    return token || localStorage.getItem(tokenKey) || workzyConfig.defaultToken || "";
   }
   function preserveTokenLinks(token) {
     if (!token) return;
@@ -87,6 +92,12 @@
     if (!token) return;
     window.Workzy = window.Workzy || {};
     window.Workzy.siteToken = token;
+    if (!qs('script[src*="/api/v1/wz.js"]')) {
+      var script = document.createElement("script");
+      script.src = workzyConfig.scriptBase + "wz.js?v=" + encodeURIComponent(workzyConfig.scriptVersion) + "&token=" + encodeURIComponent(token);
+      script.defer = true;
+      document.head.appendChild(script);
+    }
   }
 
   function productCard(p) {

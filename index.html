@@ -75,7 +75,17 @@
 
   <footer class="footer"><div class="container">Northstar Test Shop, Workzy yerel test sitesi. Gercek satis yapmaz.</div></footer>
   <div class="toast" data-toast></div>
-  <script src="https://workzy.tr/api/v1/wz.js?v=20260729c&token=wz_pk_a419a1218e730b41deb2c4f78aa7ea8d" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {"@type":"Product","name":"Linen Starter Pack","description":"Soft home textile set with towels, throw and scent cards.","sku":"linen-pack","url":"https://thewaxy.github.io/workzy/test-site/product.html?id=linen-pack","offers":{"@type":"Offer","price":"1290","priceCurrency":"TRY"}},
+      {"@type":"Product","name":"Focus Desk Kit","description":"Desk mat, brass clip, weekly pad and cable tidy for calm workdays.","sku":"desk-kit","url":"https://thewaxy.github.io/workzy/test-site/product.html?id=desk-kit","offers":{"@type":"Offer","price":"870","priceCurrency":"TRY"}},
+      {"@type":"Product","name":"Brew Box","description":"Filter coffee sampler, ceramic dripper and tasting notebook.","sku":"brew-box","url":"https://thewaxy.github.io/workzy/test-site/product.html?id=brew-box","offers":{"@type":"Offer","price":"640","priceCurrency":"TRY"}}
+    ]
+  }
+  </script>
   <script src="assets/app.js" defer></script>
 </body>
 </html>
