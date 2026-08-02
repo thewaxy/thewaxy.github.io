@@ -15,7 +15,7 @@
   var workzyConfig = {
     scriptBase: "https://workzy.tr/api/v1/",
     scriptVersion: "20260729c",
-    defaultToken: "wz_pk_3394328ee0832ff611ad02f9c5f54c55"
+    defaultToken: "wz_pk_9820c1577303120ccaad980b270757f8"
   };
 
   function money(value) { return new Intl.NumberFormat("tr-TR", { style: "currency", currency: "TRY", maximumFractionDigits: 0 }).format(value); }
